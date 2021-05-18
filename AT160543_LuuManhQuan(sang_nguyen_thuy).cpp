@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdbool.h>
 int main(){
 	int n;
 	scanf("%d",&n);
@@ -11,7 +12,8 @@ int main(){
 		if(kiemTra[i]==0){
 			continue;
 		}
-		for(int j=2*i;j<=n;j=j+i){
+		if(kiemTra[i]==1){
+				for(int j=2*i;j<=n;j=j+i){
               if(kiemTra[j]==1){
               	dem++;
 			  }
@@ -20,8 +22,8 @@ int main(){
 		  if(dem==0){
 		  	break;
 		  }
+		}
 	}
-	
 	for(int i=2;i<=n;i++){
 		if(kiemTra[i]==1){
 			printf("%d ",i);
